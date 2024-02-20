@@ -26,6 +26,8 @@
 	<!-- Theme CSS -->
 	<link id="theme-style" rel="stylesheet" href="risen.css">
 
+
+
 </head>
 
 
@@ -40,6 +42,8 @@
 
 						<a class="btn btn-primary top-bar-cta" href="https://harisheoran.github.io" target="_blank">Hire
 							Me</a>
+
+							<div class="btn btn-primary top-bar-ctl" id="counter"></a>
 
 						<ul class="social-list list-inline mx-auto">
 							<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://twitter.com/harisheoran"
@@ -65,7 +69,7 @@
 						<div class="resume-profile-holder text-center">
 							<img class="resume-profile-pic rounded-circle" src="profile.png" alt="image">
 
-							<h2 class="resume-name text-uppercase">Harish Sheoran </h2>
+							<h2 class="resume-name text-uppercase">Harish Sheoran</h2>
 							<div class="resume-role-title text-uppercase">DevOps Engineer</div>
 							<div class="resume-contact mt-4">
 								<ul class="resume-contact-list list-unstyled list-inline mb-0 justify-content-between">
@@ -361,5 +365,28 @@
 				style="color:#fe655c"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com"
 				target="_blank">Xiaoying Riley</a> for developers</small>
 	</footer>
+
+	<script>
+		window.onload = function () {
+			fetch('http://127.0.0.1:4000/')
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Network response was not ok');
+					}
+					return response.json();
+				})
+				.then(data => {
+					if (data && data.response === 1) {
+						document.getElementById("counter").innerText = "View: " + data.response;
+					}
+				})
+				.catch(error => {
+					console.error('There was a problem with the fetch operation:', error);
+				});
+		};
+	</script>
+
+
+
 
 </body>

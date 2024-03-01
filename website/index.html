@@ -43,7 +43,7 @@
 						<a class="btn btn-primary top-bar-cta" href="https://harisheoran.github.io" target="_blank">Hire
 							Me</a>
 
-							<div class="btn btn-primary top-bar-ctl" id="counter"></a>
+						<div class="btn btn-primary ctl" id="counter"></div>
 
 						<ul class="social-list list-inline mx-auto">
 							<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://twitter.com/harisheoran"
@@ -74,7 +74,8 @@
 							<div class="resume-contact mt-4">
 								<ul class="resume-contact-list list-unstyled list-inline mb-0 justify-content-between">
 									<li class="list-inline-item me-md-3 me-lg-5"><i
-											class="resume-contact-icon bi bi-telephone-inbound me-2"></i> +123-4567890
+											class="resume-contact-icon bi bi-telephone-inbound me-2"></i>
+										+123-4567890
 									</li>
 									<li class="list-inline-item me-md-3 me-lg-5"><i
 											class="resume-contact-icon bi bi-envelope me-2"></i>
@@ -96,10 +97,13 @@
 									<div class="resume-summary-desc">
 										I’m Harish, a DevOps Engineer with a deep-rooted commitment to enhancing
 										software development and deployment practices. My daily toolkit comprises
-										Kubernetes, AWS, Docker, Ansible, Terraform, and Jenkins, Prometheus, Grafana,
+										Kubernetes, AWS, Docker, Ansible, Terraform, and Jenkins, Prometheus,
+										Grafana,
 										Linux, ArgoCD allowing me to orchestrate and automate the software delivery
-										pipeline efficiently. Linux serves as the foundation of my daily operations in
-										the DevOps realm, offering robust stability and flexibility. Additionally, I’m
+										pipeline efficiently. Linux serves as the foundation of my daily operations
+										in
+										the DevOps realm, offering robust stability and flexibility. Additionally,
+										I’m
 										well-versed in vital tools like Git, GitHub, Vim, and shell scripting.
 
 									</div>
@@ -133,15 +137,20 @@
 													<li>Containerization: Implemented multi-stage Docker builds for
 														optimized image size and performance.</li>
 													<li>CI Pipeline: Implemented CI pipeline using GitHub Actions.
-														Automated Docker image build and push to the registry on code
+														Automated Docker image build and push to the registry on
+														code
 														changes.</li>
-													<li>CD pipeline: Orchestrated CD workflow with Argo CD. Automated
+													<li>CD pipeline: Orchestrated CD workflow with Argo CD.
+														Automated
 														Kubernetes deployments based on manifest files.</li>
-													<li>Monitoring: Implemented robust monitoring using Prometheus and
-														Grafana. Established real-time visibility into the performance
+													<li>Monitoring: Implemented robust monitoring using Prometheus
+														and
+														Grafana. Established real-time visibility into the
+														performance
 														of the deployed application.</li>
 													<li>Website Technology: GO, JavaScript, Bootstrap 5</li>
-													<li>Technology Used: Docker, Git and Github, GitHub Actions, ArgoCD,
+													<li>Technology Used: Docker, Git and Github, GitHub Actions,
+														ArgoCD,
 														Kubernetes, Prometheus, Grafana</li>
 												</ul>
 
@@ -159,7 +168,8 @@
 												</div>
 												<h3 class="resume-position-title mb-1"><a
 														href="https://harisheoran.github.io/projects/containerized_nodejs_mongodb_app_deployment/"
-														target="_blank">Containerized Node JS MongoDB App Deployment on
+														target="_blank">Containerized Node JS MongoDB App Deployment
+														on
 														AWS</a></h3>
 
 											</div><!--//resume-timeline-item-header-->
@@ -167,16 +177,23 @@
 												<ul class="resume-timeline-list">
 
 													<li>Micro Blogging Website</li>
-													<li>Containerization: Orchestrated seamless containerization of a
+													<li>Containerization: Orchestrated seamless containerization of
+														a
 														Node.js and MongoDB application using Docker.</li>
-													<li>CI Pipeline: Implemented a Jenkins-based CI pipeline with GitHub
-														Webhooks for automatic builds and integrated email notifications
+													<li>CI Pipeline: Implemented a Jenkins-based CI pipeline with
+														GitHub
+														Webhooks for automatic builds and integrated email
+														notifications
 														for effective communication.</li>
-													<li>Registry Management: Automated Docker image builds and versioned
-														registry management on Docker Hub for streamlined deployment.
+													<li>Registry Management: Automated Docker image builds and
+														versioned
+														registry management on Docker Hub for streamlined
+														deployment.
 													</li>
-													<li>AWS Deployment: Deployed the application on AWS EC2 instances,
-														achieving high availability with Nginx as a load balancer.</li>
+													<li>AWS Deployment: Deployed the application on AWS EC2
+														instances,
+														achieving high availability with Nginx as a load balancer.
+													</li>
 													<li>Infrastructure as Code (IaC): Utilized Terraform for EC2
 														instance creation and Ansible for efficient server
 														configuration, ensuring scalability and reliability.</li>
@@ -251,7 +268,8 @@
 
 								<section class="resume-skills-section resume-section">
 									<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-											class="resume-section-heading-icon bi bi-person-gear me-2"></i>Soft Skills
+											class="resume-section-heading-icon bi bi-person-gear me-2"></i>Soft
+										Skills
 									</h3>
 									<ul class="list-inline">
 										<li class="list-inline-item"><span
@@ -310,7 +328,8 @@
 
 								<section class="resume-lang-section resume-section">
 									<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-											class="resume-section-heading-icon bi bi-translate me-2"></i>Languages</h3>
+											class="resume-section-heading-icon bi bi-translate me-2"></i>Languages
+									</h3>
 									<ul class="list-unstyled resume-lang-list">
 										<li class="mb-2">
 											<div class="resume-lang-name">English</div>
@@ -376,9 +395,7 @@
 					return response.json();
 				})
 				.then(data => {
-					if (data && data.response === 1) {
-						document.getElementById("counter").innerText = "View: " + data.response;
-					}
+					document.getElementById("counter").innerText = "View: " + data.response;
 				})
 				.catch(error => {
 					console.error('There was a problem with the fetch operation:', error);

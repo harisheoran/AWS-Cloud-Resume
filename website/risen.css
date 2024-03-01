@@ -14138,7 +14138,7 @@ a.btn svg {
     font-size: .875rem
 }
 
-.top-bar .top-bar-ctl {
+.ctl {
     position: absolute;
     left: 0;
     padding: .5rem 1.25rem;

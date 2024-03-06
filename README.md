@@ -1,12 +1,5 @@
 ## AWS Cloud Resume
 
-## Steps
-- Website Code
-- Buy Domain
-- Create Route 53
-- Create SSL Cert ACM
-
-
 ## Manual Steps
 - Build a Resume Website in HTML, CSS, JS
 

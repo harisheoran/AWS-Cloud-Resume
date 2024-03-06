@@ -14,7 +14,7 @@ import (
 )
 
 func MainHandler(context *gin.Context) {
-	client := CreateProductionClient()
+	client := CreateLocalClient()
 
 	myTable := models.MyTable{
 		DynamoDbClient:        client,

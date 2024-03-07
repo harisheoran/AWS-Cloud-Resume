@@ -77,6 +77,8 @@ but it is not using our Domain Name
 
 ## CI pipeline for frontend Code
 
+Cache Invaildation Issue
+Latest changes are unavailable to the users because the contents are cached at the CloudFront edge locations. The default caching policy keeps the contents cached for up to 24 hours (TTL).
 
 
 

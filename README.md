@@ -75,6 +75,7 @@ but it is not using our Domain Name
 - Create a ***A Record*** in hosted zone for *Alias* to redirect the request from domain name to CDN URL.
 
 
+## CI pipeline for frontend Code
 
 
 

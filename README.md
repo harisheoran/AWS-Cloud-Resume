@@ -80,10 +80,23 @@ but it is not using our Domain Name
 Cache Invaildation Issue
 Latest changes are unavailable to the users because the contents are cached at the CloudFront edge locations. The default caching policy keeps the contents cached for up to 24 hours (TTL).
 
+## CI pipeline for API 
+- Create Docker image of our API
 
+Process Timeline: 
+- Localhost is the localhost of docker itself not the host machine
+- Multistage Docker build issue - Can't access the shell of container
+- Docker Volume helps a lot 
+    - In development to sync local directory with container
+    - Named Volume (Anonymous Volumes) help in not syncing the container's specific directory
 
+- Bash Script is a must skill to have - $(pwd)
 
-
+```
+ docker container run -v $(pwd):/app -v name:/app/main -d -p 4000:4000 --env-file ./.env view_api_img
+```
+- Checking the logs of the container. 
+- Setting the environment for container using env file and single variable 
 
 
 

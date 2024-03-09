@@ -14,11 +14,11 @@ import (
 )
 
 func MainHandler(context *gin.Context) {
-	client := CreateLocalClient()
+	client := CreateProductionClient()
 
 	myTable := models.MyTable{
 		DynamoDbClient:        client,
-		TableName:             "mytrackerssssss",
+		TableName:             "view_tracker",
 		PkName:                "PK",
 		SkName:                "SK",
 		GsiName:               "GSI",
@@ -27,7 +27,7 @@ func MainHandler(context *gin.Context) {
 		LsiIndexName:          "LocalSecondaryIndex",
 		GlobalWriteReadCap:    10,
 		PartitionWriteReadCap: 10,
-		Location:              "us-east-1",
+		Location:              "ap-south-1",
 	}
 
 	fmt.Println(myTable)
@@ -38,58 +38,30 @@ func MainHandler(context *gin.Context) {
 		log.Fatal(tableExistERR)
 	}
 	if isexist {
-		mycount, _ := myTable.GetItem("1")
 
-		//fmt.Println("COUNT", mycount.Count)
-		if mycount.Count == 0 {
-			myCount := models.MyCount{
-				Count: 1,
-				PK:    "Pk#1",
-				SK:    "Sk#1",
-			}
-			// Put an Item
-			err := myTable.PutItem(myCount)
+		mycount, getErr := myTable.GetItem("1")
+		newCount := mycount.Count + 1
+		myTable.PutItem(models.MyCount{newCount, "Pk#1", "Sk#1"})
 
-			if err != nil {
-				fmt.Print("PUT ITEM ERROR")
-				log.Fatal(err)
-			} else {
-				fmt.Println("Put item success FIRST TIME")
-			}
-		} else {
-			mycount, getErr := myTable.GetItem("1")
-			newCount := mycount.Count + 1
-			myTable.PutItem(models.MyCount{newCount, "Pk#1", "Sk#1"})
-
-			if getErr != nil {
-				context.JSON(
-					500,
-					gin.H{
-						"error": "Database Error",
-					},
-				)
-
-			}
-
-			fmt.Print("VIEWS: ", mycount.Count)
+		if getErr != nil {
 			context.JSON(
-				200,
+				500,
 				gin.H{
-					"response": newCount,
+					"error": "Database Error",
 				},
 			)
+
 		}
 
-	} else {
-		myTable.CreateTable()
+		fmt.Print("VIEWS: ", mycount.Count)
 		context.JSON(
 			200,
 			gin.H{
-				"response": 1,
+				"response": newCount,
 			},
 		)
-	}
 
+	}
 }
 
 func CreateProductionClient() *dynamodb.Client {
@@ -103,15 +75,15 @@ func CreateProductionClient() *dynamodb.Client {
 
 func CreateLocalClient() *dynamodb.Client {
 	cfg, err := config.LoadDefaultConfig(context.TODO(),
-		config.WithRegion("us-east-1"),
+		config.WithRegion("ap-south-1"),
 		config.WithEndpointResolver(aws.EndpointResolverFunc(
 			func(service, region string) (aws.Endpoint, error) {
-				return aws.Endpoint{URL: "http://localhost:8000"}, nil
+				return aws.Endpoint{URL: "http://172.17.0.2:8000"}, nil
 			})),
 		config.WithCredentialsProvider(credentials.StaticCredentialsProvider{
 			Value: aws.Credentials{
 				AccessKeyID: "dummy", SecretAccessKey: "dummy", SessionToken: "dummy",
-				Source: "Hard-coded credentials; values are irrelevant for local DynamoDB",
+				Source: "These are hard-coded credentials; values are irrelevant for local DynamoDB",
 			},
 		}),
 	)

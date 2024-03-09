@@ -84,8 +84,8 @@ func (myTable MyTable) PutItem(mycount MyCount) error {
 		Item:      data,
 	})
 
-	if err != nil {
-		return fmt.Errorf("PutItem: %v\n", err)
+	if err == nil {
+		return fmt.Errorf("PUTITEM: %v\n", err)
 	}
 
 	return nil

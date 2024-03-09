@@ -4,12 +4,7 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/harisheoran/tracker_api/controllers"
-	"github.com/harisheoran/tracker_api/inits"
 )
-
-func init() {
-	inits.LoadEnv()
-}
 
 var mainRouter = gin.Default()
 

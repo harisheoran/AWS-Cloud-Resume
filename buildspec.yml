@@ -7,10 +7,8 @@ env:
 phases:
   build:
     commands:
-      - echo $DOCKER_USERNAME 
-      - echo $DOCKER_PASSWORD
       - cd tracker_api/
-      - echo $DOCKER_USERNAME | docker login -u $DOCKER_USERNAME --password-stdin $DOCKER_URL
+      - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin $DOCKER_URL
       - docker build -t "$DOCKER_USERNAME/view_api_img:latest" .
       - docker push "$DOCKER_USERNAME/view_api_img:latest"
   post_build:

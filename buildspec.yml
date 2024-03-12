@@ -1,5 +1,4 @@
 version: 0.2
-run-as: ubuntu
 env:
   parameter-store:
     DOCKER_USERNAME: docker_username

@@ -1,20 +1,16 @@
 version: 0.2
 run-as: ubuntu
-
 env:
+  parameter-store:
   - DOCKER_USERNAME: docker_username
   - DOCKER_PASSWORD: docker_password
-  - DOCKER_REGISTRY_URL:
-
 phases:
-
   build:
-    commands: 
+    commands:
       - cd ./tracker_api/
       - echo $DOCKER_USERNAME | docker login -u $DOCKER_USERNAME --password-stdin
       - docker build -t "$DOCKER_USERNAME/view_api_img:latest" .
       - docker push "$DOCKER_USERNAME/view_api_img:latest"
-
   post_build:
     commands:
       - echo "Successfully pushed to Docker hub Registry"

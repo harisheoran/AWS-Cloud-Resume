@@ -9,7 +9,6 @@ import (
 var mainRouter = gin.Default()
 
 func main() {
-
 	// Apply CORS middleware
 	mainRouter.Use(cors.Default())
 

@@ -2,8 +2,8 @@ version: 0.2
 run-as: ubuntu
 env:
   parameter-store:
-  - DOCKER_USERNAME: docker_username
-  - DOCKER_PASSWORD: docker_password
+    DOCKER_USERNAME: docker_username
+    DOCKER_PASSWORD: docker_password
 phases:
   build:
     commands:

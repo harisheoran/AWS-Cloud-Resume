@@ -8,5 +8,5 @@
 ################################
 
 set -e
-echo "hello"
-#docker container rm -f view_tracker_container
+
+docker container rm -f view_tracker_container

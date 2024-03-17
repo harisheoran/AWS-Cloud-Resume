@@ -9,4 +9,4 @@
 
 set -e
 
-docker container run -d -p 4000:4000 --name view_tracker_container --env-file ./.env harisheoran/view_api_img
+docker container run -d -p 4000:4000 --name view_tracker_container --env-file /home/ubuntu/.env harisheoran/view_api_img

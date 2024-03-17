@@ -3,7 +3,7 @@ os: linux
 
 hooks:
   ApplicationStop:
-    - location: scripts/stop_container.sh
+    - location: echo "Hello"
       timeout: 300
       runas: root
 

@@ -1,4 +1,4 @@
-## AWS Cloud Resume
+## AWS Cloud Resume Project
 
 ## Manual Steps
 - Build a Resume Website in HTML, CSS, JS

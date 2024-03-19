@@ -14,3 +14,9 @@ phases:
   post_build:
     commands:
       - echo "Successfully pushed to Docker hub Registry"
+artifacts:
+  files:
+    - '**/*'
+  base-directory: base_dir
+  name: build-artifact-name
+  discard-paths: no

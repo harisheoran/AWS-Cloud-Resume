@@ -1,6 +1,6 @@
 ## AWS Cloud Resume Project
 
-## Manual Steps
+## Steps
 - Build a Resume Website in HTML, CSS, JS
 
 > You can download [this](https://themes.3rdwavemedia.com/bootstrap-templates/resume/risen-free-bootstrap-5-dark-mode-resume-cv-template-for-developers/) Bootstrap website and change accordingly.

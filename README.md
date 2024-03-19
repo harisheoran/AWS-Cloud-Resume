@@ -7,7 +7,7 @@
 
 Here is my resume website code - [Github](https://github.com/harisheoran/AWS-Cloud-Resume/tree/main/website)
 
-- Host it on S3 Bucket
+- Host it on AWS S3 Bucket
     - Create a S3 Bucket as same name as you Domain Name
     - Remove check from ***Block Public Access***
     - Upload all the website files

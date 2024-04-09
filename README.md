@@ -12,4 +12,5 @@ v1.0.0
 - Orchestrated deployment pipeline on AWS utilizing AWS CodePipeline, CodeBuild, and CodeDeploy for automated building, testing, and deployment of the API Docker image.
 - Employed various AWS services including IAM Roles and IAM Users for secure access management and authorization.
 
-### Read Full documentation on my [website](https://harisheoran.github.io/projects/aws_resume/).
+# Infrastructue as Code using Terraform
+Read Full documentation on my [website](https://harisheoran.github.io/projects/aws_resume_iac/).

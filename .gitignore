@@ -1,1 +1,25 @@
 tracker_api/.env
+    
+# Ignore Terraform files in the 'iac' directory
+iac/.terraform/
+
+# Ignore any .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Ignore .tfvars files that are generated automatically
+*.tfvars
+
+# Ignore override files as they're usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include override files you do want to add to version control using negation patterns
+# !example_override.tf
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc

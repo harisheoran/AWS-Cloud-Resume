@@ -69,3 +69,16 @@ data "aws_iam_policy_document" "s3_policy" {
     }
   }
 }
+
+# alias to cdn
+resource "aws_route53_record" "a-record" {
+  zone_id = var.route53_hosted_zoneId
+  name = var.domain
+  type = "A"
+
+  alias {
+    name = aws_cloudfront_distribution.s3_distribution.domain_name
+    zone_id = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
+    evaluate_target_health = false
+  }
+}

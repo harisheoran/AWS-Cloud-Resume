@@ -2,6 +2,7 @@ tracker_api/.env
     
 # Ignore Terraform files in the 'iac' directory
 iac/.terraform/
+vault/.terraform/
 
 # Ignore any .tfstate files
 *.tfstate

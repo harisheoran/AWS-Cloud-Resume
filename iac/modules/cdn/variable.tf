@@ -22,3 +22,7 @@ variable "domain" {
   type = string
   description = "Main Domain name"
 }
+
+variable "route53_hosted_zoneId" {
+  type = string
+}
